@@ -1,6 +1,6 @@
-from gemini_client import ask_gemini
+from gemini_client import ask_gemini_with_tools
 from business_data import BUSINESS_DATA
-from tools import create_order
+from tools import create_order, ORDER_TOOL
 from memory import remember, get_memory
 
 
@@ -17,11 +17,10 @@ User:
 જવાબ વ્યવસાયિક રીતે આપો.
 """
 
-    response = ask_gemini(prompt)
-
-    remember(message, response)
-
-    return response
+    response = ask_gemini_with_tools(
+    prompt,
+    [ORDER_TOOL]
+)
 
 
 if __name__ == "__main__":
