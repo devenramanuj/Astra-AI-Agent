@@ -18,15 +18,15 @@ User:
 """
 
     response = ask_gemini_with_tools(
-    prompt,
-    [ORDER_TOOL]
-)
+        prompt,
+        [ORDER_TOOL]
+    )
 
-text = response.text
+    text = response.text
 
-remember(message, text)
+    remember(message, text)
 
-return text
+    return text
 
 
 if __name__ == "__main__":
