@@ -22,6 +22,12 @@ User:
     [ORDER_TOOL]
 )
 
+text = response.text
+
+remember(message, text)
+
+return text
+
 
 if __name__ == "__main__":
 
