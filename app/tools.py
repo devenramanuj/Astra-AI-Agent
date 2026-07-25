@@ -1,10 +1,21 @@
 orders = []
 
-def create_order(product, quantity, price):
-    order_id = len(orders) + 1
+def create_order(
+    product: str,
+    quantity: int,
+    price: float
+) -> dict:
+    """
+    Create a customer order.
+
+    Args:
+        product: Product name.
+        quantity: Quantity ordered.
+        price: Price per unit.
+    """
 
     order = {
-        "order_id": order_id,
+        "order_id": len(orders) + 1,
         "product": product,
         "quantity": quantity,
         "total": quantity * price
@@ -12,27 +23,5 @@ def create_order(product, quantity, price):
 
     orders.append(order)
 
-    return order
-ORDER_TOOL = {
-    "name": "create_order",
-    "description": "ગ્રાહક માટે નવો ઓર્ડર બનાવે છે.",
-    "parameters": {
-        "type": "object",
-        "properties": {
-            "product": {
-                "type": "string"
-            },
-            "quantity": {
-                "type": "integer"
-            },
-            "price": {
-                "type": "number"
-            }
-        },
-        "required": [
-            "product",
-            "quantity",
-            "price"
-        ]
-    }
+    return order    }
 }
