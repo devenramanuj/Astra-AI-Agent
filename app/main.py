@@ -1,6 +1,6 @@
 from gemini_client import ask_gemini_with_tools
 from business_data import BUSINESS_DATA
-from tools import create_order, ORDER_TOOL
+from tools import create_order
 from memory import remember, get_memory
 
 
@@ -19,9 +19,9 @@ User:
 
     text = ask_gemini_with_tools(prompt)
 
-remember(message, text)
+    remember(message, text)
 
-return text
+    return text
 
 
 if __name__ == "__main__":
