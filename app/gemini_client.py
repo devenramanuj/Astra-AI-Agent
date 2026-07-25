@@ -20,3 +20,14 @@ def ask_gemini(prompt):
     )
 
     return response.text
+
+def ask_gemini_with_tools(prompt, tools):
+    response = client.models.generate_content(
+        model=MODEL,
+        contents=prompt,
+        config={
+            "tools": tools
+        }
+    )
+
+    return response
