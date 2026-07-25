@@ -17,16 +17,11 @@ User:
 જવાબ વ્યવસાયિક રીતે આપો.
 """
 
-    response = ask_gemini_with_tools(
-        prompt,
-        [ORDER_TOOL]
-    )
+    text = ask_gemini_with_tools(prompt)
 
-    text = response.text
+remember(message, text)
 
-    remember(message, text)
-
-    return text
+return text
 
 
 if __name__ == "__main__":
