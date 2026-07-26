@@ -1,14 +1,6 @@
-orders = []
+def create_order(product: str, quantity: int, price: float) -> dict:
 
-
-def create_order(
-    product: str,
-    quantity: int,
-    price: float
-) -> dict:
-    """
-    Create a customer order.
-    """
+    print("DEBUG:", product, quantity, price)
 
     order = {
         "order_id": len(orders) + 1,
