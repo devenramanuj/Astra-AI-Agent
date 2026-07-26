@@ -1,6 +1,5 @@
-from gemini_client import ask_gemini_with_tools
+from gemini_client import ask_gemini
 from business_data import BUSINESS_DATA
-from tools import create_order
 from memory import remember, get_memory
 
 
@@ -17,7 +16,7 @@ User:
 જવાબ વ્યવસાયિક રીતે આપો.
 """
 
-    text = ask_gemini_with_tools(prompt)
+    text = ask_gemini(prompt)
 
     remember(message, text)
 
@@ -28,7 +27,7 @@ if __name__ == "__main__":
 
     print("Astra AI Agent Started")
 
-    user_message = "મને 2 લિટર તેલ જોઈએ છે"
+    user_message = input("User: ")
 
     answer = astra_chat(user_message)
 
